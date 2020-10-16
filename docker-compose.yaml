@@ -12,10 +12,11 @@ services:
         ports:
             - 80
         environment:
-            - TITLE=uzsonna
+            - TITLE=preprod
+            - COLOR=lightgreen
+            - BODY=uzsonna szunet
         networks:
         - blue
-        #image: 'ebed:v4'
         build: .
     adminer:
         ports:
