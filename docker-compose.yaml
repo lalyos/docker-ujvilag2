@@ -5,21 +5,13 @@ services:
             - MYSQL_ROOT_PASSWORD=secret
         volumes:
             - ./sql/set5:/docker-entrypoint-initdb.d
-        networks:
-        - blue
         image: mysql
     front:
         ports:
             - 80
         env_file: .env
-        networks:
-        - blue
         build: .
     adminer:
         ports:
             - 8080
         image: adminer
-        networks:
-        - blue
-networks:
-    blue:
