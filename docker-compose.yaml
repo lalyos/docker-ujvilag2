@@ -15,7 +15,8 @@ services:
             - TITLE=uzsonna
         networks:
         - blue
-        image: 'ebed:v4'
+        #image: 'ebed:v4'
+        build: .
     adminer:
         ports:
             - 8080
