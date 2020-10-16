@@ -1,3 +1,4 @@
+use mysql;
 create TABLE person (name VARCHAR(20));
 
 insert into person VALUES ('trump');
