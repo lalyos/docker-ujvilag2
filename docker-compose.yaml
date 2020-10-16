@@ -1,0 +1,26 @@
+version: '3.3'
+services:
+    db:
+        environment:
+            - MYSQL_ROOT_PASSWORD=secret
+        volumes:
+            - ./sql/set5:/docker-entrypoint-initdb.d
+        networks:
+        - blue
+        image: mysql
+    front:
+        ports:
+            - 80
+        environment:
+            - TITLE=uzsonna
+        networks:
+        - blue
+        image: 'ebed:v4'
+    adminer:
+        ports:
+            - 8080
+        image: adminer
+        networks:
+        - blue
+networks:
+    blue:
