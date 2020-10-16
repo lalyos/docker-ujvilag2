@@ -1,4 +1,13 @@
 #!/bin/bash
 
-echo $TITLE > /var/www/html/index.html
+cat > /var/www/html/index.html <<EOF
+<html>
+<body bgcolor="$COLOR">
+  <h2>$TITLE</h2>
+
+  $BODY
+</body>
+</html>
+EOF
+
 nginx -g "daemon off;"
