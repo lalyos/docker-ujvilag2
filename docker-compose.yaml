@@ -11,10 +11,7 @@ services:
     front:
         ports:
             - 80
-        environment:
-            - TITLE=preprod
-            - COLOR=lightgreen
-            - BODY=uzsonna szunet
+        env_file: .env
         networks:
         - blue
         build: .
